@@ -50,6 +50,7 @@ const Header = ({ setWords }) => {
       <p className="text-sm my-3 text-green-600">
         Click the word to show the definition.
       </p>
+      <p className="text-sm text-red-500">Double click to remove the word.</p>
     </header>
   );
 };
