@@ -5,15 +5,17 @@ const Header = ({ setWords }) => {
   const [definition, setDefinition] = useState("");
 
   const addWord = () => {
-    setWords((words) => [
-      ...words,
-      {
-        word,
-        definition,
-      },
-    ]);
-    setWord("");
-    setDefinition("");
+    if (word) {
+      setWords((words) => [
+        ...words,
+        {
+          word,
+          definition,
+        },
+      ]);
+      setWord("");
+      setDefinition("");
+    }
   };
 
   return (
@@ -21,14 +23,13 @@ const Header = ({ setWords }) => {
       <h1 className="text-4xl font-bold font-happyMonkey">Rema, Learn Fast</h1>
       <p className="text-xl">Learn words faster</p>
 
-      <form className="flex flex-col">
+      <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
           placeholder="Add a word"
           value={word}
           onChange={(e) => setWord(e.target.value)}
           className="w-80 sm:w-96 mt-7 border outline-none border-gray-500 rounded-md p-3"
-          required
         />
         <input
           type="text"
@@ -36,7 +37,6 @@ const Header = ({ setWords }) => {
           value={definition}
           onChange={(e) => setDefinition(e.target.value)}
           className="w-80 sm:w-96 mt-2 border outline-none border-gray-500 rounded-md p-3"
-          required
         />
         <button
           onClick={addWord}
