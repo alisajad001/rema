@@ -11,6 +11,7 @@ const Header = ({ setWords }) => {
         {
           word,
           definition,
+          id: Math.random() * 100000,
         },
       ]);
       setWord("");

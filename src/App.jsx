@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <Header setWords={setWords} />
-      <Words words={words} />
+      <Words words={words} setWords={setWords} />
     </div>
   );
 };
