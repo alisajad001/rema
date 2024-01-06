@@ -46,6 +46,9 @@ const Header = ({ setWords }) => {
           Add
         </button>
       </form>
+      <p className="text-sm my-3 text-green-600">
+        Click the word to show the definition.
+      </p>
     </header>
   );
 };
